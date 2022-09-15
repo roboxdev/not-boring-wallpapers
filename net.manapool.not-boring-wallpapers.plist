@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>net.manapool.not-boring-wallpapers</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>NOT_BORING_WALLPAPERS_IMAGE_INDEX</key>
+        <string>0</string>
+        <key>NOT_BORING_WALLPAPERS_PATH</key>
+        <string>NotBoringWallpapers</string>
+        <key>NOT_BORING_WALLPAPERS_NAME</key>
+        <string>not-boring-wallpaper</string>
+        <key>NOT_BORING_WALLPAPERS_RESOLUTION</key>
+        <string>3840</string>
+<!--        <string>3840</string>-->
+<!--        <string>1920</string>-->
+<!--        <string>1366</string>-->
+        <key>NOT_BORING_WALLPAPERS_REGION</key>
+        <string>en-US</string>
+<!--        <string>en-US</string>-->
+<!--        <string>en-UK</string>-->
+<!--        <string>en-CA</string>-->
+<!--        <string>en-AU</string>-->
+<!--        <string>en-NZ</string>-->
+<!--        <string>de-DE</string>-->
+<!--        <string>zh-CN</string>-->
+<!--        <string>ja-JP</string>-->
+
+    </dict>
+    <key>ProgramArguments</key>
+    <array>
+        <string>bash</string>
+        <string>-c</string>
+        <string>
+            <![CDATA[
+                mkdir -p "${HOME}/${NOT_BORING_WALLPAPERS_PATH}" &&
+                sleep 60 &&
+                curl -fsSL "https://bing.biturl.top/?resolution=${NOT_BORING_WALLPAPERS_RESOLUTION}&mkt=${NOT_BORING_WALLPAPERS_REGION}&format=image&index=${NOT_BORING_WALLPAPERS_IMAGE_INDEX}" -o ${TMPDIR}/${NOT_BORING_WALLPAPERS_NAME}.jpg &&
+                mv -f ${TMPDIR}/${NOT_BORING_WALLPAPERS_NAME}.jpg "${HOME}/${NOT_BORING_WALLPAPERS_PATH}/${NOT_BORING_WALLPAPERS_NAME}.jpg"
+            ]]>
+        </string>
+    </array>
+    <key>StandardErrorPath</key>
+    <string>/tmp/net.manapool.not-boring-wallpapers.err.log</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/net.manapool.not-boring-wallpapers.out.log</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Hour</key>
+            <integer>0</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>6</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>12</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>18</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+</dict>
+</plist>
