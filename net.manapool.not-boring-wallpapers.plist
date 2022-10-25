@@ -38,7 +38,8 @@
                 mkdir -p "${HOME}/${NOT_BORING_WALLPAPERS_PATH}" &&
                 sleep 60 &&
                 curl -fsSL "https://bing.biturl.top/?resolution=${NOT_BORING_WALLPAPERS_RESOLUTION}&mkt=${NOT_BORING_WALLPAPERS_REGION}&format=image&index=${NOT_BORING_WALLPAPERS_IMAGE_INDEX}" -o ${TMPDIR}/${NOT_BORING_WALLPAPERS_NAME}.jpg &&
-                mv -f ${TMPDIR}/${NOT_BORING_WALLPAPERS_NAME}.jpg "${HOME}/${NOT_BORING_WALLPAPERS_PATH}/${NOT_BORING_WALLPAPERS_NAME}.jpg"
+                mv -f ${TMPDIR}/${NOT_BORING_WALLPAPERS_NAME}.jpg "${HOME}/${NOT_BORING_WALLPAPERS_PATH}/${NOT_BORING_WALLPAPERS_NAME}.jpg" &&
+                killall Dock
             ]]>
         </string>
     </array>

@@ -14,12 +14,10 @@ A macOS `launchd` agent downloading a new [Bing Wallpaper](https://www.microsoft
 2. Go to **System Preferences** › **Desktop & Screen Saver**  
 ![Guide](docs/installation.png?raw=true "Guide")  
 3. Select **Desktop** tab
-4. Add a new folder
-5. Select the `~/NotBoringWallpapers` folder created in step `1`.
-6. Enable **Change pictures**
-7. Select **Every 5 minutes**
-8. [Optional] Go to **Dock** › **System Preferences** › **Right Click** › **Options** › **Assign To** › **All Desktops** and  
-repeat steps `5`-`7` for each Space or Display  
+4. Add the `~/NotBoringWallpapers` folder created in step `1`
+5. Select a wallpaper.
+6. [Optional] Go to **Dock** › **System Preferences** › **Right Click** › **Options** › **Assign To** › **All Desktops** and  
+repeat step `5` for each Space or Display  
 
 # Uninstall
 ```bash
